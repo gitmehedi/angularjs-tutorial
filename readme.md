@@ -1,2 +1,2 @@
-# School of Learning Angular js application
+# School of Learning Angularjs application
 
