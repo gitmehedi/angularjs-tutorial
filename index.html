@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create library</title>
+        <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+    </head>
+    <body ng-app="libApp">
+
+        <div class="container" ng-controller="libCtrl">
+            <br/><br/><br/>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal" ng-submit="addToLib()">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="title" id="inputEmail3"
+                                       placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Author</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="author" class="form-control" id="inputPassword3"
+                                       placeholder="Author name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>S.N</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr ng-repeat="lib in libArra">
+                            <td>{{lib.sn}}</td>
+                            <td>{{lib.title}}</td>
+                            <td>{{lib.author}}</td>
+                            <td>{{lib.done}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="assets/bower_components/angular/angular.min.js"></script>
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app/app.module.js"></script>
+    </body>
+</html>
