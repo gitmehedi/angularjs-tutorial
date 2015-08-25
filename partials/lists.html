@@ -12,8 +12,9 @@
         <td>{{lib.title}}</td>
         <td>{{lib.author}}</td>
         <td>
-            <a class="btn btn-sm btn-info" href="#/edit/{{lib.sn}}">Edit</a>
-            <a class="btn btn-sm btn-danger" href="#/delete">Delete</a>
+            <a class="btn btn-sm btn-info" href="#/edit/{{$index + 1}}">Edit</a>
+         
+            <span class="btn btn-sm btn-danger" ng-click="removeBook(lib, $index)" href="">Delete</span>
         </td>
     </tr>
 </table>

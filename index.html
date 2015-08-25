@@ -12,8 +12,11 @@
             <br/><br/><br/>
 
             <div class="row" >
-                <div ng-view class="col-sm-5"></div>
-                <div class="col-sm-5 col-sm-offset-6" ng-include='"partials/directory.html"'></div>
+                <div ng-view class="col-sm-12"></div>
+            </div>
+            <hr />
+            <div class="row" >
+                <div class="col-sm-12" ng-include='"partials/lists.html"'></div>
             </div>
         </div>
         <script src="assets/bower_components/angular/angular.min.js"></script>
