@@ -1,3 +1,5 @@
+<a href="#/new" class="btn btn-info" ng-click="false">Create  Books</a>
+<br>
 <table class="table table-bordered">
     <tr>
         <th>S.N</th>
@@ -9,6 +11,9 @@
         <td>{{lib.sn}}</td>
         <td>{{lib.title}}</td>
         <td>{{lib.author}}</td>
-        <td>{{lib.done}}</td>
+        <td>
+            <a class="btn btn-sm btn-info" href="#/edit">Edit</a>
+            <a class="btn btn-sm btn-danger" href="#/delete">Delete</a>
+        </td>
     </tr>
 </table>
