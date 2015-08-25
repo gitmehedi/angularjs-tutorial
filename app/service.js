@@ -6,9 +6,15 @@ app.service('libService', [function () {
             {sn: 2, author: 'Ahmed', title: 'build an angular app', done: false}
         ];
 
-        this.addToLib = function (books) {
-            books.sn = this.libArra.length + 1;
-            this.libArra.push({sn: books.sn, author: books.author, title: books.title, done: false});
+        this.addToLib = function (books, option) {
+
+            if (option) {
+
+            } else {
+                books.sn = this.libArra.length + 1;
+                this.libArra.push({sn: books.sn, author: books.author, title: books.title, done: false});
+            }
+
             this.clearForm(books);
 
         };

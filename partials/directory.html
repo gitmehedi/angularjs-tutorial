@@ -7,12 +7,12 @@
         <th>Author</th>
         <th>Actions</th>
     </tr>
-    <tr ng-repeat="lib in libArra">
+    <tr ng-repeat="lib in libArra track by $index">
         <td>{{lib.sn}}</td>
         <td>{{lib.title}}</td>
         <td>{{lib.author}}</td>
         <td>
-            <a class="btn btn-sm btn-info" href="#/edit">Edit</a>
+            <a class="btn btn-sm btn-info" href="#/edit/{{lib.sn}}">Edit</a>
             <a class="btn btn-sm btn-danger" href="#/delete">Delete</a>
         </td>
     </tr>
