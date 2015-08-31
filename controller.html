@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create library</title>
+        <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+
+    </head>
+    <body ng-app="myApp">
+
+        <div class="container">
+            <nav class="navbar navbar-inverse " ng-include='"partials/navigation.html"'>  </nav>
+        </div>
+
+        <div class="container">
+
+            <div class="starter-template">
+                <h1>Bootstrap starter template</h1>
+                <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            </div>
+
+        </div><!-- /.container -->
+        <div class="container" ng-include='"partials/footer.html"'>
+            
+        </div>
+
+
+        <script src="assets/bower_components/angular/angular.min.js"></script>
+        <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app/controller/controller.js"></script>
+    </body>
+</html>
