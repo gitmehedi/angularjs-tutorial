@@ -15,14 +15,24 @@
 
         <div class="container">
 
-            <div class="starter-template">
-                <h1>Bootstrap starter template</h1>
-                <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            <div class="row starter-template col-sm-12" >
+
             </div>
+
+            <div class="row col-lg-4" ng-controller="myCtrl">
+                <ul class="list-group">
+                    <li class="list-group-item active" > Serial </li>
+                    <li class="list-group-item" >{{person.name}}</li>
+                    <!--<li class="list-group-item"><img src="{{person.location}}" alt=""></li>-->
+                    <li class="list-group-item">{{person.location}}</li>
+                    <li class="list-group-item btn"><a href="{{person.url}}" style="padding: 0px; margin: 0px;" class="btn btn-block">Edit</a></li>
+                </ul>
+            </div>
+
 
         </div><!-- /.container -->
         <div class="container" ng-include='"partials/footer.html"'>
-            
+
         </div>
 
 
