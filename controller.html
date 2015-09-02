@@ -6,6 +6,12 @@
         <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="assets/css/style.css"/>
 
+        <script src="assets/bower_components/angular/angular.min.js"></script>
+        <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app/controller/controller.js"></script>
+
     </head>
     <body ng-app="myApp">
 
@@ -22,24 +28,24 @@
 
             <div class="row " ng-controller="myCtrl">
                 <div class="col-sm-4">
-                    <form name="name" ng-submit="search(username)">
+                    <form name="name" ng-submit="success(username)">
                         <div class="form-group" ng-click="success(username)">
                             <label>Git Username: </label>
                             <input type="search" class="form-control" name="search" ng-model="username"/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" id="submit" value="Search" class="btn btn-sm btn-info" />
+                            <input type="submit" id="submit" value="Search" class="btn btn-sm btn-info"  />
                         </div>
 
                     </form>
                     <br>
                     <br>
-                    <div class="error" ng-hide="error | isEmpty"></div>
-                    <ul class="list-group" ng-hide="person | isEmpty">
-                        <li class="list-group-item active" ng-hide="person | isEmpty"> Serial </li>
-                        <li class="list-group-item"ng-hide="person | isEmpty" >Name: {{ person.login}}</li>
-                        <li class="list-group-item" ng-hide="person | isEmpty"><img ng-src="{{person.avatar_url}}" alt="{{person.login}}" title="{{person.login}}" width="100" height="100"></li>
-                        <li class="list-group-item" ng-hide="person | isEmpty">Location: {{ person.location}}</li>
+                    <div class="error"></div>
+                    <ul class="list-group">
+                        <li class="list-group-item active"> Serial </li>
+                        <li class="list-group-item">Name: {{ person.login}}</li>
+                        <li class="list-group-item"><img ng-src="{{person.avatar_url}}" alt="{{person.login}}" title="{{person.login}}" width="100" height="100"></li>
+                        <li class="list-group-item">Location: {{ person.location}}</li>
                         <!--<li class="list-group-item btn"><a href="{{ person.url}}" style="padding: 0px; margin: 0px;" class="btn btn-block">Edit</a></li>-->
                     </ul>
                 </div>
@@ -49,7 +55,7 @@
                         <thead>
                             <tr>
                                 <td>Name</td>
-                                <td>Stars</td>
+                                <td>Size</td>
                                 <td>Language</td>
                                 <td>Description</td>
                             </tr>
@@ -57,7 +63,7 @@
                         <tbody>
                             <tr ng-repeat="repo in repos">
                                 <td><a ng-href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></td>
-                                <td>{{repo.size}}</td>
+                                <td>{{repo.size| number}}</td>
                                 <td>{{repo.language}}</td>
                                 <td>{{repo.description}}</td>
                             </tr>
@@ -72,10 +78,6 @@
         </div>
 
 
-        <script src="assets/bower_components/angular/angular.min.js"></script>
-        <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
-        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="app/controller/controller.js"></script>
+
     </body>
 </html>

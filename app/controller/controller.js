@@ -7,7 +7,10 @@ app.controller('myCtrl', function ($scope, $http) {
     var onResponse = function (res) {
         $scope.person = res.data;
         console.log($scope.person.repos_url);
-        $http.get($scope.person.repos_url).then(onRepo, onError);
+        if ($scope.person.repos_url != "") {
+            $http.get($scope.person.repos_url).then(onRepo, onError);
+        }
+
     };
     var onRepo = function (response) {
 
@@ -18,7 +21,9 @@ app.controller('myCtrl', function ($scope, $http) {
     };
 
     $scope.success = function (username) {
-        $http.get('https://api.github.com/users/' + username).then(onResponse, onError);
+        if (typeof username != "undefined") {
+            $http.get('https://api.github.com/users/' + username).then(onResponse, onError);
+        }
 
     };
 
