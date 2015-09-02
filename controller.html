@@ -49,8 +49,8 @@
                         <!--<li class="list-group-item btn"><a href="{{ person.url}}" style="padding: 0px; margin: 0px;" class="btn btn-block">Edit</a></li>-->
                     </ul>
                 </div>
-                <div class="col-sm-8">
 
+                <div class="col-sm-8" ng-show="person">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -61,7 +61,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="repo in repos">
+                            <tr ng-repeat="repo in repos| orderBy:'-name'">
                                 <td><a ng-href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></td>
                                 <td>{{repo.size| number}}</td>
                                 <td>{{repo.language}}</td>
@@ -71,7 +71,6 @@
                     </table>
                 </div>
             </div>
-
         </div><!-- /.container -->
         <div class="container" ng-include='"partials/footer.html"'>
 
