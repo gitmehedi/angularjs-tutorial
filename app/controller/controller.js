@@ -6,12 +6,22 @@ app.controller('myCtrl', function ($scope, $http) {
 
     var onResponse = function (res) {
         $scope.person = res.data;
+        console.log($scope.person.repos_url);
+        $http.get($scope.person.repos_url).then(onRepo, onError);
+    };
+    var onRepo = function (response) {
+
+        $scope.repos = response.data;
     };
     var onError = function (err) {
         $scope.error = "Could not connect to server";
     };
 
-    $http.get('https://api.github.com/users/gitmehedi').then(onResponse, onError);
+    $scope.success = function (username) {
+        $http.get('https://api.github.com/users/' + username).then(onResponse, onError);
+
+    };
+
 });
 
 //app.config('')
