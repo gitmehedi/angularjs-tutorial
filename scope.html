@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create library</title>
+        <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+
+        <script src="assets/bower_components/angular/angular.min.js"></script>
+        <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app/controller/scopeController.js"></script>
+
+    </head>
+    <body ng-app="myApp">
+        <div class="container">
+            <nav class="navbar navbar-inverse " ng-include='"partials/navigation.html"'>  </nav>
+        </div>
+        <div class="container">
+            <div class="row starter-template col-sm-12" ></div>
+
+            <h2>Root Controller Scope: <strong>{{name}}</strong></h2>
+            <div ng-controller="SiteController">
+                <h2>Site Controller Scope: <strong>{{name}}</strong></h2>
+                <span>{{publisher}} excels in {{type}} books</span>
+                <div ng-controller="BookController">
+                    <h2>Books Controller Scope: <strong>{{name}}</strong></h2>
+                    <h3>Some of the popular books from {{publisher}}</h3>
+                    <ul>
+                        <li ng-repeat="book in books">
+                            {{book}}
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.container -->
+            <div class="container" ng-include='"partials/footer.html"'></div>
+    </body>
+</html>

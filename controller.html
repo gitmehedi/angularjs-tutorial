@@ -58,14 +58,16 @@
                                 <td>Size</td>
                                 <td>Language</td>
                                 <td>Description</td>
+                                <td>Create Date</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="repo in repos| orderBy:'-name'">
+                            <tr ng-repeat="repo in repos| orderBy:'-created_at'">
                                 <td><a ng-href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></td>
                                 <td>{{repo.size| number}}</td>
                                 <td>{{repo.language}}</td>
                                 <td>{{repo.description}}</td>
+                                <td>{{repo.created_at | date:'yyyy-MM-dd'}}</td>
                             </tr>
                         </tbody>
                     </table>
