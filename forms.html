@@ -54,6 +54,13 @@
                                             && myform.phoneNumber.$invalid">The phone number field should be
                         of 10 digits</span>
                 </div>
+                <div class="form-group">
+                    <label id="selectGroup" class="col-sm-2 control-label">Select Group:</label>
+                    <div class="col-sm-2">
+                        <select name="country" ng-model="user.country" class="form-control" ng-options="country.id as country.desc for country in countries">
+                        </select>
+                    </div>
+                </div>
             </form>
 
             <div class="container" ng-include='"partials/footer.html"'></div>
