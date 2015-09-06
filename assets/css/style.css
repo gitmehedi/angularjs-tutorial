@@ -12,3 +12,12 @@ body {
     padding-bottom: 40px;
     padding-top: 40px;
 }
+
+/* Forms Controller styles */
+
+.error-message {
+    color: red;
+}
+input.ng-dirty.ng-invalid {
+    border-color: red;
+}
