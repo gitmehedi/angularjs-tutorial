@@ -3,6 +3,7 @@
 app.service('libService', [function () {
         this.libArra = [
             {sn: 1, author: 'Humayun', title: 'learn angular', done: true},
+            {sn: 1, author: 'Mehedi Hasan', title: 'learn angular', done: true},
             {sn: 2, author: 'Ahmed', title: 'build an angular app', done: false}
         ];
 
