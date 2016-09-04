@@ -17,9 +17,9 @@ postModule.controller('blogCtrl',function($scope){
 postModule.config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
     $routeProvider.when('/blog',{
         controller:'blogCtrl',
-        templateUrl: 'views/blog.html'
+        templateUrl: 'modules/posts/views/blog.html'
     }).when('/blog-admin',{
         controller: 'blogCtrl',
-        templateUrl: 'views/blog.html'
+        templateUrl: 'modules/posts/views/blog.html'
     });
 }]);

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create library</title>
+        <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="app/modules/admin/css/style.css"/>
+
+        <script src="assets/bower_components/angular/angular.min.js"></script>
+        <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app/modules/admin/adminModule.js"></script>
+
+    </head>
+    <body ng-app="myApp">
+    <div class="container">
+        <nav class="navbar navbar-inverse " ng-include='"partials/navigation.html"'>  </nav>
+    </div>
+
+    <div class="container" ng-controller="myCtrl">
+
+        <form name="myForm" action="#" class="form">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstname" ng-model="user.firstname"/>
+            </div>
+
+            Country List:
+            <select name="country" ng-model="user.country"
+                    ng-options="country as country.name for country in countries">
+            </select>
+            <br>
+            Hey, what do u love?
+            <input type="radio" ng-model="user.radio" value="Coffee" /> Coffee
+            <input type="radio" ng-model="user.radio" value="Beer" /> Beer
+            <br>
+            Hey, do you love coffee?<br>
+            <input type="Checkbox" ng-model="user.choice" value="Coffee"
+                   ng-true-value="Yes" ng-false-value="No"/> Coffee
+            <input type="Checkbox" ng-model="user.choice" value="beer"
+                   ng-true-value="Yes" ng-false-value="No" /> Beer
+            <input type="Checkbox" ng-model="user.choice" value="candy"
+                   ng-true-value="Yes" ng-false-value="No"/> Candy
+            <input type="Checkbox" ng-model="user.choice" value="tea"
+                   ng-true-value="Yes" ng-false-value="No"/> Tea
+
+        </form>
+
+        <h6> This is your <b>{{ user.firstname}}</b></h6>
+        <h6> Selected Country: <b>{{ user.country}}</b></h6>
+        <h6> Radio Section ans: <b>{{ user.radio}}</b></h6>
+        <h6> Checkbox Section ans: <b>{{ user.choice}}</b></h6>
+
+    </div>
+    </body>
+</html>
