@@ -8,13 +8,13 @@
         <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
         <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="app/app.module.js"></script>
-        <script src="app/app.routes.js"></script>
-        <script src="app/service.js"></script>
-        <script src="app/library/BooksController.js"></script>
+        <!--<script src="app/app.module.js"></script>-->
+        <!--<script src="app/app.routes.js"></script>-->
+        <!--<script src="app/service.js"></script>-->
+        <!--<script src="app/library/BooksController.js"></script>-->
         <script src="app/modules/posts/postModule.js"></script>
     </head>
-    <body ng-app="">
+    <body ng-app="postModule" >
         <div class="container">
             <nav class="navbar navbar-inverse " ng-include='"partials/navigation.html"'>  </nav>
         </div>
@@ -24,7 +24,10 @@
         <!--</div>-->
 
         <!--load all angularJS template-->
-        <div class="ng-view"></div>
+        <div class="container">
+            <div class="ng-view" ng-controller="blogCtrl"></div>
+
+        </div>
 
 
     </body>
